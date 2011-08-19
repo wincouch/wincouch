@@ -150,11 +150,6 @@ namespace WinCouch
         {
             browseToolStripButton.Checked = false;
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void browseToolStripButton_Click(object sender, EventArgs e)
         {
             geckoBrowser.Navigate("localhost:5984/_utils");
