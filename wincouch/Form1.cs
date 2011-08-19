@@ -14,7 +14,7 @@ namespace WinCouch
 {
     public partial class Form1 : Form
     {
-        #region Private Fileds
+        #region Private Data
         Skybound.Gecko.GeckoWebBrowser geckoBrowser;
         Process couchdb;
         
@@ -76,7 +76,9 @@ namespace WinCouch
         #region Start Stop CouchDB
         [DllImport("kernel32.dll", SetLastError = true)]
         static extern bool GenerateConsoleCtrlEvent(ConsoleCtrlEvent sigevent, int dwProcessGroupId);
-
+        /// <summary>
+        /// 
+        /// </summary>
         public enum ConsoleCtrlEvent
         {
             CTRL_C = 0,
@@ -85,7 +87,11 @@ namespace WinCouch
             CTRL_LOGOFF = 5,
             CTRL_SHUTDOWN = 6
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void runToolStripButton_Click(object sender, EventArgs e)
         {
             if (!(sender as ToolStripButton).Checked)
@@ -144,7 +150,11 @@ namespace WinCouch
         {
             browseToolStripButton.Checked = false;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void browseToolStripButton_Click(object sender, EventArgs e)
         {
             geckoBrowser.Navigate("localhost:5984/_utils");
